@@ -4,3 +4,8 @@ currentDay
 Timeblocks
 Timeblocks
 javascript
+bg-secondary
+bg-info
+viewBox
+xmlns
+currentColor

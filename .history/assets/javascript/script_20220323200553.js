@@ -1,17 +1,8 @@
-// const now = luxon.DateTime.now();
-// console.log(now);
-
-const currentDay = luxon.DateTime.now().toLocaleString(luxon.DateTime.DATETIME_MED);
-var newFormat = {
-    ...luxon.DateTime.DATETIME_MED,
-    weekday: 'long'
-};
-const newCurrentDay = luxon.DateTime.now().toLocaleString(newFormat);
-console.log(newCurrentDay);
-
+const now = DateTime.now();
+console.log(DateTime);
 
 //  Get the current day to display on the page.
-
+const day = now.day;
 
 //  create time blocks for standard business hours
 
