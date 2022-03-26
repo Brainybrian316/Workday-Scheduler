@@ -11,7 +11,7 @@ var newFormat = {
 // creates a new instance for time and date.
 const newCurrentDay = luxon.DateTime.now().toLocaleString(newFormat);
 //  checks if time works.
-
+console.log(newCurrentDay);
 
 //  creates a new instance to parse the date and time into the header html.
 var ol = document.querySelector('header');
@@ -27,8 +27,10 @@ ol.appendChild(list);
 //  creates an array to change the blocks bases on their time.
 const timeBlocks = Array.from(document.getElementsByClassName('description'));
 // assigning timeBlocks based on time.
-for (var i = 0; i < timeBlocks.length; i++) {
-    var now = luxon.DateTime.now().hour.toLocaleString();
+for (let i = 0; i < timeBlocks.length; i++) {
+    const now = luxon.DateTime.now().toLocaleString({
+        hour: 'numeric'
+    });
     console.log(now);
     if (timeBlocks[i].id < now) {
         timeBlocks[i].classList.add('past');
