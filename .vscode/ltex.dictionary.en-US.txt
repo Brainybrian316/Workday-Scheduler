@@ -9,3 +9,7 @@ bg-info
 viewBox
 xmlns
 currentColor
+ol
+saveBtn
+btn
+fas
