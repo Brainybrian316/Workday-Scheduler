@@ -43,81 +43,26 @@ for (let i = 0; i < timeBlocks.length; i++) {
     //  if statement's to change the color of the blocks based on time using the 24hr time format.
     if (timeBlocksId < now) {
         timeBlocks[i].classList.add('past');
-    }
-    if (timeBlocksId === now) {
+    } else if (timeBlocksId === now) {
         timeBlocks[i].classList.add('present')
-    }
-    if (timeBlocksId > now) {
+    } else {
         timeBlocks[i].classList.add('future');
     }
-
 };
 
-// *third attempt
-// // * testing
-// saveBtn = document.getElementsByClassName('saveBtn');
-
-// var save = addEventListener('click', function () {
-//     //  creates a new instance to parse the date and time into the header html. 
-//     var textarea = document.querySelector('textarea');
-
-//     this.window.localStorage.setItem('textarea', textarea.value);
-
-//     this.window.localStorage.getItem('textarea');
-// });
-
-
-
-
-
-
-//  save
+//  saves the data to local storage when save button is clicked
 $('.saveBtn').each(function (index) {
+    // event listener for save button
     $(this).on("click", function () {
-
+        // targets the text area element.
         var taskText = $(this).prev().val();
-
+        // saves it based on the index
         localStorage.setItem(`${index}`, taskText);
-
     });
 });
 
+// for each text area element, it will load the data from local storage based on it's index.
 $('textarea').each(function (index) {
-
+    // gets the data from local storage based on the index if there is no data, it will display 'Event'.
     $(this).val(localStorage.getItem(`${index}`) || "Event");
-
-})
-
-
-// ("click", function () {
-
-//     for (let i = 0; i < saveBtn.length; i++)
-//     localStorage.setItem
-// });
-
-
-// *fourth attempt
-
-// function populateStorage() {
-//     $('.saveBtn').on("click", function () {
-//         window.localStorage.setItem('tasks',
-//             document.getElementsByClassName('description').value);
-//     })
-//     loadTask();
-// };
-
-// function loadTask() {
-//     var task = window.localStorage.getItem('tasks');
-
-//     document.getElementsByClassName('description').value = task;
-// };
-
-
-
-
-
-
-// TODO:  event is saved into time block using local storage
-
-
-// TODO:  have my minutes actively change. 
+});
