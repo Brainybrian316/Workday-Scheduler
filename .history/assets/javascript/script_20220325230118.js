@@ -1,5 +1,3 @@
-saveBtn = document.getElementsByClassName('saveBtn');
-
 //  creates a new instance for time and date.
 const currentDay = luxon.DateTime.now().toLocaleString(luxon.DateTime.DATETIME_MED);
 //  format's the date and time.
@@ -45,53 +43,7 @@ for (var i = 0; i < timeBlocks.length; i++) {
 }
 
 
-// // * testing
-// saveBtn = document.getElementsByClassName('saveBtn');
 
-// var save = addEventListener('click', function () {
-//     //  creates a new instance to parse the date and time into the header html. 
-//     var textarea = document.querySelector('textarea');
-
-//     this.window.localStorage.setItem('textarea', textarea.value);
-
-//     this.window.localStorage.getItem('textarea');
-// });
-
-
-
-
-//  TODO: can  use save button for event text to persist even when refreshed.
-
-// $('.saveBtn').on("click", function () {
-//     window.localStorage.setItem('task', $(this).siblings('.description').val());
-// })
-
-// loadTask = function () {
-//     return window.localStorage.getItem('task');
-// }
-
-
-// let taskArray = [{
-//     21: "",
-//     22: "",
-//     23: "",
-// }];
-
-// $('.saveBtn').on("click", function () {
-//     window.localStorage.setItem('tasks', JSON.stringify(taskArray));
-
-//     JSON.parse(window.localStorage.getItem('tasks'));
-
-// var storedData = window.localStorage.getItem(taskArray);
-
-// if (storedData) {
-//     taskArray = JSON.parse(storedData);
-//     alert(taskArray);
-// }
-// });
-
+//  TODO: can save button for time block
 
 // TODO:  event is saved into time block using local storage
-
-
-// TODO:  have my minutes actively change. 
