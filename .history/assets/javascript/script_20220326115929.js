@@ -69,48 +69,54 @@ for (let i = 0; i < timeBlocks.length; i++) {
 
 
 
+//  TODO: can  use save button for event text to persist even when refreshed.
+// * first attempt
+// $('.saveBtn').on("click", function () {
+//     window.localStorage.setItem('task', $(this).siblings('.description').val());
+// })
+// console.log(loadTask);
 
+// loadTask = function () {
 
-//  save
-$('.saveBtn').each(function (index) {
-    $(this).on("click", function () {
+//     // return window.localStorage.getItem('task').value;
+// }
 
-        var taskText = $(this).prev().val();
+// *second attempt
+// let taskArray = [{
+//     21: "",
+//     22: "",
+//     23: "",
+// }];
 
-        localStorage.setItem(`${index}`, taskText);
+// $('.saveBtn').on("click", function () {
+//     window.localStorage.setItem('tasks', JSON.stringify(taskArray));
 
-    });
-});
+//     JSON.parse(window.localStorage.getItem('tasks'));
+//     console.log(taskArray.value);
 
-$('textarea').each(function (index) {
-
-    $(this).val(localStorage.getItem(`${index}`) || "Event");
-
-})
-
-
-// ("click", function () {
-
-//     for (let i = 0; i < saveBtn.length; i++)
-//     localStorage.setItem
+//     var storedData = window.localStorage.getItem(taskArray);
+// });
+// if (storedData) {
+//     taskArray = JSON.parse(storedData);
+//     alert(taskArray);
+// }
 // });
 
-
 // *fourth attempt
+function populateStorage() {
+    $('.saveBtn').on("click", function () {
+        window.localStorage.setItem('tasks',
+            document.getElementsByClassName('description').value);
 
-// function populateStorage() {
-//     $('.saveBtn').on("click", function () {
-//         window.localStorage.setItem('tasks',
-//             document.getElementsByClassName('description').value);
-//     })
-//     loadTask();
-// };
+    })
+    loadTask();
+};
 
-// function loadTask() {
-//     var task = window.localStorage.getItem('tasks');
+function loadTask() {
+    var task = window.localStorage.getItem('tasks');
 
-//     document.getElementsByClassName('description').value = task;
-// };
+    document.getElementsByClassName('description').value = task;
+};
 
 
 

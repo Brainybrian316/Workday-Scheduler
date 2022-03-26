@@ -69,9 +69,35 @@ for (let i = 0; i < timeBlocks.length; i++) {
 
 
 
+//  TODO: can  use save button for event text to persist even when refreshed.
+// * first attempt
+// $('.saveBtn').on("click", function () {
+//     window.localStorage.setItem('task', $(this).siblings('.description').val());
+// })
+// console.log(loadTask);
+
+// loadTask = function () {
+
+//     // return window.localStorage.getItem('task').value;
+// }
+
+// *second attempt
+// let taskArray = [{
+//     9: "",
+//     10: "",
+//     11: "",
+// }];
+
+// $('.saveBtn').on("click", function () {
+//     window.localStorage.setItem('tasks', JSON.stringify(taskArray));
+
+//     JSON.parse(window.localStorage.getItem('tasks'));
+//     console.log(taskArray.value);
+
+//     var storedData = window.localStorage.getItem(taskArray);
+// });
 
 
-//  save
 $('.saveBtn').each(function (index) {
     $(this).on("click", function () {
 

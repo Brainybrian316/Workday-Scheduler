@@ -53,7 +53,7 @@ for (let i = 0; i < timeBlocks.length; i++) {
 
 };
 
-// *third attempt
+
 // // * testing
 // saveBtn = document.getElementsByClassName('saveBtn');
 
@@ -69,52 +69,35 @@ for (let i = 0; i < timeBlocks.length; i++) {
 
 
 
+//  TODO: can  use save button for event text to persist even when refreshed.
+
+// $('.saveBtn').on("click", function () {
+//     window.localStorage.setItem('task', $(this).siblings('.description').val());
+// })
+
+// loadTask = function () {
+//     return window.localStorage.getItem('task');
+// }
 
 
-//  save
-$('.saveBtn').each(function (index) {
-    $(this).on("click", function () {
+// let taskArray = [{
+//     21: "",
+//     22: "",
+//     23: "",
+// }];
 
-        var taskText = $(this).prev().val();
+// $('.saveBtn').on("click", function () {
+//     window.localStorage.setItem('tasks', JSON.stringify(taskArray));
 
-        localStorage.setItem(`${index}`, taskText);
+//     JSON.parse(window.localStorage.getItem('tasks'));
 
-    });
-});
+// var storedData = window.localStorage.getItem(taskArray);
 
-$('textarea').each(function (index) {
-
-    $(this).val(localStorage.getItem(`${index}`) || "Event");
-
-})
-
-
-// ("click", function () {
-
-//     for (let i = 0; i < saveBtn.length; i++)
-//     localStorage.setItem
+// if (storedData) {
+//     taskArray = JSON.parse(storedData);
+//     alert(taskArray);
+// }
 // });
-
-
-// *fourth attempt
-
-// function populateStorage() {
-//     $('.saveBtn').on("click", function () {
-//         window.localStorage.setItem('tasks',
-//             document.getElementsByClassName('description').value);
-//     })
-//     loadTask();
-// };
-
-// function loadTask() {
-//     var task = window.localStorage.getItem('tasks');
-
-//     document.getElementsByClassName('description').value = task;
-// };
-
-
-
-
 
 
 // TODO:  event is saved into time block using local storage
