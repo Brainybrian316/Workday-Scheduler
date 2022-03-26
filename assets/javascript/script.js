@@ -24,12 +24,13 @@ list.innerText = newCurrentDay;
 //  appends the newCurrentDay variable to the ol element.
 ol.appendChild(list);
 
-//  creates an array to change the blocks bases on their time.
+//  creates an array to change the blocks bases on their time in the text area element.
 const timeBlocks = Array.from(document.getElementsByClassName('description'));
 // assigning timeBlocks based on time.
 for (var i = 0; i < timeBlocks.length; i++) {
-    var now = luxon.DateTime.now().hour.toLocaleString();
-    console.log(now);
+    //  gets the current hour to connect the color changing feature in the text area element based on the 24hr format.
+    const now = luxon.DateTime.now().hour.toLocaleString();
+    //  if statement's to change the color of the blocks based on time using the 24hr time format.
     if (timeBlocks[i].id < now) {
         timeBlocks[i].classList.add('past');
     }
@@ -41,18 +42,7 @@ for (var i = 0; i < timeBlocks.length; i++) {
     }
 }
 
-// for (i = 0; i < timeBlocks.length; i++) {
-//     const timeBlock = timeBlocks[i];
-//     const hour = timeBlock.dataset.hour;
-//     const date = luxon.DateTime.fromObject({hour: hour});
-//     const formattedHour = date.toLocaleString(luxon.DateTime.TIME_SIMPLE);
-//     timeBlock.textContent = formattedHour;
-// }
 
-
-// TODO: color coat the blocks based on past, present, or future
-
-// TODO:  can enter an event into time block
 
 //  TODO: can save button for time block
 
